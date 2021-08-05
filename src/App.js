@@ -1,14 +1,16 @@
 import './App.css';
 // importing components 
 import Form from './components/Form';
+import TodoList from './components/TodoList';
 
 function App() {
   return (
     <div className="App">
       <header>
-        Testu this out
+        Test this out
       </header>
       <Form />
+      <TodoList/>
     </div>
   );
 }
