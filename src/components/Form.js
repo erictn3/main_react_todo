@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Form = ({setInputText, todos, setTodos, inputText}) => {
+const Form = ({setInputText, todos, setTodos, inputText, setStatus}) => {
 // Here I can write Javascript code and function
   const inputTextHandler = (e) => {
     console.log(e.target.value);
@@ -16,7 +16,7 @@ const Form = ({setInputText, todos, setTodos, inputText}) => {
   }
 
   const statusHandler = (e) => {
-    console.log(e.target.value);
+    setStatus(e.target.value)
   }
 
   return (
