@@ -6,12 +6,18 @@ import Form from './components/Form';
 import TodoList from './components/TodoList';
 
 function App() {
-  // Use Effect
+
   // States
   const [inputText, setInputText] = useState("");
   const [todos, setTodos] = useState([]);
   const [status, setStatus] = useState("all");
   const [filteredTodos, setFilteredTodos] = useState([]);
+
+  // Use Effect
+  useEffect(()=> {
+    filterHandler();
+  }, [todos, status]);
+
   // Functions
   const filterHandler = () => {
     switch(status) {
@@ -32,7 +38,7 @@ function App() {
         Test this out 
       </header>
       <Form inputText={inputText} todos={todos} setTodos={setTodos} setInputText={setInputText} setStatus={setStatus}/>
-      <TodoList setTodos={setTodos} todos={todos}/>
+      <TodoList setTodos={setTodos} todos={todos} filteredTodos={filteredTodos}/>
     </div>
   );
 }
